@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Footbal Highlights</title>
+	<title>Voetbalvids.nl • Vind direct de voetbalsamenvatting die je zoekt!</title>
+	<meta name="description" content="" />
 
 	<style>
 		html {
@@ -108,12 +109,12 @@
 <body>
 
 	<div class="container">
-		<h1 class="center">Football Highlights</h1>
+		<h1 class="center">Voetbalvids • Voetbal Highlights</h1>
 
 		<form id="form" class="margin-bottom-small" action="">
 			<div class="center">
 
-	          <input type="text" id="clubName" name="clubName" autocomplete="off" placeholder="Search club..." />
+	          <input type="text" id="clubName" name="clubName" autocomplete="off" placeholder="Zoek club..." />
 
 			</div>	
 		</form>		
@@ -125,7 +126,7 @@
 	<footer class="container container-large">
         <hr>
 
-        <p>Code by <a href="https://webbrouwer.com/">WebBrouwer</a> | <a href="https://www.scorebat.com/video-api/">Football Highlights API</a></p>
+        <p>Code door <a href="https://webbrouwer.com/">WebBrouwer</a> | <a href="https://www.scorebat.com/video-api/">Voetbal video API</a></p>
     </footer>	
 
 	<script>
@@ -140,8 +141,8 @@
 		var clubName = document.querySelector('#js-clubname');	
 		var results;
 
-		var monthNames = ["January", "February", "March", "April", "May", "June",
-		  "July", "August", "September", "October", "November", "December"
+		var monthNames = ["januari", "februari", "maart", "april", "mei", "juni",
+		  "juli", "augustus", "september", "oktober", "november", "december"
 		];		
 
 
@@ -169,7 +170,7 @@
 			}
 
 			if(!results.length) {
-				app.innerHTML = '<em>No results found for ' + clubToFind + '</em>';
+				app.innerHTML = '<em>Geen resultaten gevonden voor ' + clubToFind + '</em>';
 			} else {
 				renderHighlights(results);
 			}
@@ -185,7 +186,7 @@
 			// Create a new array of markup strings with array.map(), then
 			// Combine them into one string with array.join(), then
 			// Insert them into the DOM with innerHTML
-			app.innerHTML += '<span class="margin-bottom-large"><em>' + results.length + ' highlights found for ' + clubToFind + '</em></span>' +
+			app.innerHTML += '<span class="margin-bottom-large"><em>' + results.length + ' highlights gevonden voor ' + clubToFind + '</em></span>' +
 				results.map(function (result) {
 				var html =
 					'<article>' +
